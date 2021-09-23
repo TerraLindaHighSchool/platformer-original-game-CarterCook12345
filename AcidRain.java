@@ -8,12 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class AcidRain extends Obstacle
 {
-    /**
-     * Act - do whatever the AcidRain wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
+    private float yVelocity;
+    private final float GRAVITY;
+    
+    public AcidRain(float gravity)
     {
-        // Add your action code here.
+        GRAVITY = gravity;
+    }
+    
+    public void act()
+    {}
+    //Causes an object to fall in the foreground and out the bottom
+    protected void fall()
+    {
+        yVelocity += GRAVITY;
+        setLocation(getX(), getY() + (int) yVelocity);
+        removeOutOfBounds(this);
     }
 }
