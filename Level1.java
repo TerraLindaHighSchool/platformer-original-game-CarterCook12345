@@ -29,7 +29,7 @@ public class Level1 extends World
     {
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,
             Door.class, HUD.class);
-        addObject(new Player(),43,760);
+        addObject(new Player(3, 5.6f, GRAVITY, 3, 3, Level2.class, MUSIC),43,760);
         addObject(new Floor(), 600, 800);
         addObject(new Door (),1162,52);
         addObject(new BrickWall(), 380, 500);
@@ -47,6 +47,7 @@ public class Level1 extends World
         addObject(new Gem(), 975, 160);
         addObject(new Gem(), 1030, 160);
     }
+
     public void act()
     {
         spawn();
