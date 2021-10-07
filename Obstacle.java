@@ -14,8 +14,7 @@ public abstract class Obstacle extends Actor
     //false otherwise
     protected boolean isOnGround()
     {
-        Actor ground = getOneObjectAtOffset(0, getImage().getHeight()/
-                                            2, Platform.class);
+        Actor ground = getOneObjectAtOffset(0, getImage().getHeight()/ 2, Platform.class);
         
         return ground !=null;
     }
