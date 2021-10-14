@@ -60,10 +60,29 @@ public class Player extends Actor
         walk();
         jump();
         fall();
-        onCollinsion();
+        onCollision();
         gameOver();
+        levelSkip();
     }
-   
+    
+    private void levelSkip()
+    {
+        if(Greenfoot.isKeyDown("p"))
+        {
+            MUSIC.stop();
+            World world = null;
+            try 
+            {
+                world = (World) NEXT_LEVEL.newInstance();
+            }   
+            catch (InstantiationException e) {
+                System.out.println("Class cannot be instantiated");
+            } catch (IllegalAccessException e) {
+                System.out.println("Cannot access class constructor");
+                Greenfoot.setWorld(world);
+            }
+        }
+    }
     public void addedToWorld(World world) 
     {
         health[0] = new Health();
@@ -161,39 +180,43 @@ public class Player extends Actor
         frame++;
     }
    
-    private void onCollinsion()
+    private void onCollision()
     {
         if(isTouching(Door.class))
         {
             Greenfoot.playSound("door_open.wav");
             MUSIC.stop();
             World world = null;
-        try 
-        {
-            world = (World) NEXT_LEVEL.newInstance();
-        }   
-        catch (InstantiationException e) {
-            System.out.println("Class cannot be instantiated");
-        } catch (IllegalAccessException e) {
-            System.out.println("Cannot access class constructor");
-            Greenfoot.setWorld(world);
+            try 
+            {
+                world = (World) NEXT_LEVEL.newInstance();
+            }   
+            catch (InstantiationException e) {
+                System.out.println("Class cannot be instantiated");
+            } catch (IllegalAccessException e) {
+                System.out.println("Cannot access class constructor");
+                Greenfoot.setWorld(world);
+            }
         }
         
-        
-            if(isTouching(Obstacle.class))
-            {
-                Greenfoot.playSound("explosionSmall.wav");
-                removeTouching(Obstacle.class);
-                getWorld().removeObject(health[healthCount - 1]);
-                healthCount--;
-            }
-    
-            //hit platform but not on ground
-            if(isTouching(Platform.class) & !isOnGround())
-            {
-                yVelocity = -1;
-                fall();
-            }
+        if(isTouching(Obstacle.class))
+        {
+            removeTouching(Obstacle.class);
+            Greenfoot.playSound("explosionSmall.wav");
+            getWorld().removeObject(health[healthCount - 1]);
+            healthCount--;
+        }
+        if(isTouching(Gem.class))
+        {
+            removeTouching(Gem.class);
+            getWorld().removeObject(health[healthCount + 1]);
+            healthCount++;
+        }
+        //hit platform but not on ground
+        if(isTouching(Platform.class) & !isOnGround())
+        {
+            yVelocity = -1;
+            fall();
         }
     }
     private void mirrorImages()

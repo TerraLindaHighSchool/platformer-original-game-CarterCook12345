@@ -17,7 +17,9 @@ public class AcidRain extends Obstacle
     }
     
     public void act()
-    {}
+    {
+        fall();
+    }
     //Causes an object to fall in the foreground and out the bottom
     protected void fall()
     {

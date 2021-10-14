@@ -16,7 +16,9 @@ public class Rock extends Obstacle
     }
     
     public void act()
-    {}
+    {
+        fall();
+    }
     //Causes the object to fall onto a platform below
     protected void fall()
     {
@@ -24,6 +26,7 @@ public class Rock extends Obstacle
         {
             yVelocity += GRAVITY;
             setLocation(getX(), getY() + (int) yVelocity);
+            removeOutOfBounds(this);
         }
     }
 }
