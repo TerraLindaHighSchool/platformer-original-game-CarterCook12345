@@ -6,20 +6,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Carter Cook
  * 9/16/21
  */
-public class Level2 extends World
+public class Level3 extends World
 {
     private final float GRAVITY = 0.0667f;
-    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("ChillMusicOrSomething.mp3");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 3;
-    private final Class NEXT_LEVEL = Level3.class;
+    private final Class NEXT_LEVEL = WinSplash.class;
     /**
      * Constructor for objects of class BrickWorld.
      * 
      */
-    public Level2()
+    public Level3()
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1, false); 
@@ -35,18 +35,20 @@ public class Level2 extends World
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,
             Door.class, HUD.class);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
-        addObject(player, 96, 750);
+        addObject(player, 1000, 750);
         addObject(new Floor(), 600, 800);
-        addObject(new Door (),10, 200);
-        addObject(new BrickWall(), 0, 250);
-        addObject(new BrickWall(), 650, 600);
+        addObject(new Level3DoorVerySpecial (), 650, 250);
+        addObject(new TrapDoor(GRAVITY), 650, 600);
+        addObject(new TrapDoor(GRAVITY), 950, 450);
+        addObject(new TrapDoor(GRAVITY), 1050, 450);
+        addObject(new SmBrickWall(), 550, 600);
+        addObject(new SmBrickWall(), 750, 600);
+        addObject(new SmBrickWall(), 450, 600);
+        addObject(new SmBrickWall(), 300, 450);
+        addObject(new SmBrickWall(), 200, 450);
         addObject(new BrickWall(), 650, 300);
-        addObject(new SmBrickWall(), 950, 450);
-        addObject(new SmBrickWall(), 1050, 450);
-        addObject(new TrapDoor(GRAVITY), 225, 450);
-        addObject(new TrapDoor(GRAVITY), 325, 450);
-        addObject(new Bomb(GRAVITY), 275, 750);
-        addObject(new Gem(), 1000, 750);
+        addObject(new Bomb(GRAVITY), 650, 750);
+        addObject(new Gem(), 96, 775);
     }
     public void act()
     {

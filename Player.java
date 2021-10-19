@@ -67,7 +67,7 @@ public class Player extends Actor
     
     private void levelSkip()
     {
-        if(Greenfoot.isKeyDown("p"))
+        if(Greenfoot.isKeyDown("1"))
         {
             MUSIC.stop();
             World world = null;
@@ -79,8 +79,8 @@ public class Player extends Actor
                 System.out.println("Class cannot be instantiated");
             } catch (IllegalAccessException e) {
                 System.out.println("Cannot access class constructor");
-                Greenfoot.setWorld(world);
             }
+            Greenfoot.setWorld(world);
         }
     }
     public void addedToWorld(World world) 
@@ -195,8 +195,25 @@ public class Player extends Actor
                 System.out.println("Class cannot be instantiated");
             } catch (IllegalAccessException e) {
                 System.out.println("Cannot access class constructor");
-                Greenfoot.setWorld(world);
             }
+            Greenfoot.setWorld(world);
+        }
+        
+        if(isTouching(Level3DoorVerySpecial.class))
+        {
+            Greenfoot.playSound("fanfare.wav");
+            MUSIC.stop();
+            World world = null;
+            try 
+            {
+                world = (World) NEXT_LEVEL.newInstance();
+            }   
+            catch (InstantiationException e) {
+                System.out.println("Class cannot be instantiated");
+            } catch (IllegalAccessException e) {
+                System.out.println("Cannot access class constructor");
+            }
+            Greenfoot.setWorld(world);
         }
         
         if(isTouching(Obstacle.class))
@@ -206,10 +223,10 @@ public class Player extends Actor
             getWorld().removeObject(health[healthCount - 1]);
             healthCount--;
         }
-        if(isTouching(Gem.class))
+        if(isTouching(Collectable.class))
         {
-            removeTouching(Gem.class);
-            getWorld().removeObject(health[healthCount + 1]);
+            removeTouching(Collectable.class);
+            getWorld().removeObject(health[healthCount - 1]);
             healthCount++;
         }
         //hit platform but not on ground
