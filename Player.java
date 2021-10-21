@@ -199,7 +199,7 @@ public class Player extends Actor
             Greenfoot.setWorld(world);
         }
         
-        if(isTouching(Level3DoorVerySpecial.class))
+        if(isTouching(Level4DoorVerySpecial.class))
         {
             Greenfoot.playSound("fanfare.wav");
             MUSIC.stop();
@@ -226,8 +226,6 @@ public class Player extends Actor
         if(isTouching(Collectable.class))
         {
             removeTouching(Collectable.class);
-            getWorld().removeObject(health[healthCount - 1]);
-            healthCount++;
         }
         //hit platform but not on ground
         if(isTouching(Platform.class) & !isOnGround())

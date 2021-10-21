@@ -14,7 +14,7 @@ public class Level3 extends World
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 3;
-    private final Class NEXT_LEVEL = WinSplash.class;
+    private final Class NEXT_LEVEL = Level4.class;
     /**
      * Constructor for objects of class BrickWorld.
      * 
@@ -37,7 +37,7 @@ public class Level3 extends World
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player, 1000, 750);
         addObject(new Floor(), 600, 800);
-        addObject(new Level3DoorVerySpecial (), 650, 250);
+        addObject(new Door (), 650, 250);
         addObject(new TrapDoor(GRAVITY), 650, 600);
         addObject(new TrapDoor(GRAVITY), 950, 450);
         addObject(new TrapDoor(GRAVITY), 1050, 450);
