@@ -39,6 +39,7 @@ public class Level3 extends World
         addObject(new Floor(), 600, 800);
         addObject(new Door (), 650, 250);
         addObject(new TrapDoor(GRAVITY), 650, 600);
+        addObject(new Cake(), 1000, 400);
         addObject(new TrapDoor(GRAVITY), 950, 450);
         addObject(new TrapDoor(GRAVITY), 1050, 450);
         addObject(new SmBrickWall(), 550, 600);

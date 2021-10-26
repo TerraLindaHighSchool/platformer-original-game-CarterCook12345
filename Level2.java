@@ -43,6 +43,7 @@ public class Level2 extends World
         addObject(new BrickWall(), 650, 300);
         addObject(new SmBrickWall(), 950, 450);
         addObject(new SmBrickWall(), 1050, 450);
+        addObject(new Cake(), 275, 400);
         addObject(new TrapDoor(GRAVITY), 225, 450);
         addObject(new TrapDoor(GRAVITY), 325, 450);
         addObject(new Bomb(GRAVITY), 275, 750);

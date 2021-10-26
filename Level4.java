@@ -46,8 +46,6 @@ public class Level4 extends World
         addObject(new SmBrickWall (), 675, 250);
         addObject(new SmBrickWall (), 775, 150);
         addObject(new BrickWall(), 300, 400);
-        addObject(new Bomb(GRAVITY), 300, 350);
-        addObject(new Bomb(GRAVITY), 300, 250);
         addObject(new Gem(), 100, 350);
     }
     public void act()
@@ -63,6 +61,10 @@ public class Level4 extends World
         if(Math.random() < 0.005)
         {
             addObject(new AcidRain(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
+        }
+        if(Math.random() < 0.005)
+        {
+            addObject(new EvilCrab(GRAVITY), Greenfoot.getRandomNumber(300), 1);
         }
     }
 }

@@ -144,6 +144,13 @@ public class Player extends Actor
             yVelocity = JUMP_FORCE;
             isJumping = true;
         }
+        
+        if(Greenfoot.isKeyDown("up") && isOnGround())
+        {
+            Greenfoot.playSound("jump.wav");
+            yVelocity = JUMP_FORCE;
+            isJumping = true;
+        }
        
         if(isJumping && yVelocity > 0.0)
         {
