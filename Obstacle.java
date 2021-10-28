@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Obstacle here.
  * 
- * @author (your name) 
+ * @author Carter Cook
  * @version (a version number or a date)
  */
 public abstract class Obstacle extends Actor
