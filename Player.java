@@ -225,8 +225,8 @@ public class Player extends Actor
         
         if(isTouching(Obstacle.class))
         {
+            Greenfoot.playSound("boom.wav");
             removeTouching(Obstacle.class);
-            Greenfoot.playSound("Boom.mp3");
             getWorld().removeObject(health[healthCount - 1]);
             healthCount--;
         }

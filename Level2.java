@@ -22,7 +22,7 @@ public class Level2 extends World
     public Level2()
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
-        super(1200, 800, 1, false); 
+        super(1200, 710, 1, false); 
         prepare();
     }
     
@@ -35,18 +35,18 @@ public class Level2 extends World
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,
             Door.class, HUD.class);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
-        addObject(player, 96, 750);
-        addObject(new Floor(), 600, 800);
+        addObject(player, 96, 670);
+        addObject(new Floor(), 600, 710);
         addObject(new Door (),10, 200);
         addObject(new BrickWall(), 0, 250);
         addObject(new BrickWall(), 650, 600);
         addObject(new BrickWall(), 650, 300);
         addObject(new SmBrickWall(), 950, 450);
         addObject(new SmBrickWall(), 1050, 450);
-        addObject(new Cake(), 275, 400);
-        addObject(new TrapDoor(GRAVITY), 225, 450);
-        addObject(new TrapDoor(GRAVITY), 325, 450);
-        addObject(new Bomb(GRAVITY), 275, 750);
+        addObject(new Cake(), 275, 375);
+        addObject(new TrapDoor(GRAVITY), 210, 425);
+        addObject(new TrapDoor(GRAVITY), 325, 425);
+        addObject(new Bomb(GRAVITY), 275, 670);
         addObject(new Gem(), 1000, 750);
     }
     public void act()

@@ -22,7 +22,7 @@ public class Level4 extends World
     public Level4()
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
-        super(1200, 800, 1, false); 
+        super(1200, 710, 1, false); 
         prepare();
     }
     
@@ -35,8 +35,8 @@ public class Level4 extends World
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,
             Door.class, HUD.class);
-        addObject(player, 1000, 750);
-        addObject(new Floor(), 600, 800);
+        addObject(player, 1000, 670);
+        addObject(new Floor(), 600, 710);
         addObject(new Level4DoorVerySpecial (),1162,52);
         addObject(new SmBrickWall (), 1162, 104);
         addObject(new SmBrickWall (), 1062, 104);
@@ -62,7 +62,7 @@ public class Level4 extends World
         {
             addObject(new AcidRain(GRAVITY), Greenfoot.getRandomNumber(1000), 1);
         }
-        if(Math.random() < 0.005)
+        if(Math.random() < 0.025)
         {
             addObject(new EvilCrab(GRAVITY), Greenfoot.getRandomNumber(300), 1);
         }

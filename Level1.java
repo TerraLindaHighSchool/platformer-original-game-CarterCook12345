@@ -22,7 +22,7 @@ public class Level1 extends World
     public Level1()
     {    
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
-        super(1200, 800, 1, false); 
+        super(1200, 710, 1, false); 
         prepare();
     }
     
@@ -35,8 +35,8 @@ public class Level1 extends World
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,
             Door.class, HUD.class);
-        addObject(player, 96, 750);
-        addObject(new Floor(), 600, 800);
+        addObject(player, 96, 670);
+        addObject(new Floor(), 600, 710);
         addObject(new Door (),1162,52);
         addObject(new BrickWall(), 380, 500);
         addObject(new BrickWall(), 780, 300);
@@ -50,7 +50,7 @@ public class Level1 extends World
         addObject(new TrapDoor(GRAVITY), 60, 400);
         addObject(new Cake(), 60, 350);
         addObject(new Bomb(GRAVITY), 465, 115);
-        addObject(new Bomb(GRAVITY), 1000, 760);
+        addObject(new Bomb(GRAVITY), 1000, 670);
         addObject(new Gem(), 975, 160);
         addObject(new Gem(), 1030, 160);
     }

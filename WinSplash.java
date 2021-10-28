@@ -16,6 +16,6 @@ public class WinSplash extends World
     public WinSplash()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1200, 800, 1, false); 
+        super(1200, 710, 1, false); 
     }
 }
