@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class Cake here.
  * Mostly a distraction to get the player to fall into a trapdoor
  * Carter Cook
- * @version (a version number or a date)
+ * 11/1/21
  */
 public class Cake extends Actor
 {
