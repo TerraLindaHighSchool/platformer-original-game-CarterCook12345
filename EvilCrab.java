@@ -2,8 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Crab here.
- * 
- * @author (your name) 
+ * Crab that defends the gem on level 4
+ * Carter Cook 
  * @version (a version number or a date)
  */
 public class EvilCrab extends Obstacle
